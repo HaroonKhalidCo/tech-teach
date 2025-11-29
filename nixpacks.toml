@@ -1,11 +1,14 @@
+[providers]
+python = "3.12"
+
 [phases.setup]
-nixPkgs = ["python313", "python313Packages.pip", "python313Packages.virtualenv", "ffmpeg"]
+nixPkgs = ["ffmpeg"]
 
 [phases.install]
 cmds = [
   "python3 -m venv /app/.venv",
   "/app/.venv/bin/pip install --upgrade pip",
-  "/app/.venv/bin/pip install -r requirements.txt"
+  "/app/.venv/bin/pip install --no-cache-dir -r requirements.txt"
 ]
 
 [start]

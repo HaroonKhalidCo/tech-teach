@@ -3,7 +3,7 @@ name = "tech-teach"
 version = "0.1.0"
 description = "AI-Powered Teaching Assistant using Google ADK Agents"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.119.0",
     "google-genai>=1.43.0",
