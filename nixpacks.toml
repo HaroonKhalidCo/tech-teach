@@ -1,9 +1,13 @@
 [phases.setup]
-nixPkgs = ["python313", "python313Packages.pip", "ffmpeg"]
+nixPkgs = ["python313", "python313Packages.pip", "python313Packages.virtualenv", "ffmpeg"]
 
 [phases.install]
-cmds = ["pip install -r requirements.txt"]
+cmds = [
+  "python3 -m venv /app/.venv",
+  "/app/.venv/bin/pip install --upgrade pip",
+  "/app/.venv/bin/pip install -r requirements.txt"
+]
 
 [start]
-cmd = "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"
+cmd = "/app/.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"
 
