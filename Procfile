@@ -1,2 +1,2 @@
-web: uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}
+web: bash -c 'source /app/.venv/bin/activate && uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}'
 
