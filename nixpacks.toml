@@ -1,8 +1,5 @@
-[providers]
-python = "3.12"
-
 [phases.setup]
-nixPkgs = ["ffmpeg"]
+nixPkgs = ["python312", "python312Packages.pip", "ffmpeg"]
 
 [phases.install]
 cmds = [
